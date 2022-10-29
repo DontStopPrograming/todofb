@@ -32,12 +32,15 @@ let notes = [
     }
 ]
 
+
+
 app.get('/', (request, reponse) => {
     response.send('<h1>Hello World</h1>')
 })
 
 app.get('/api/notes', (request, response) => {
     response.json(notes)
+    
 })
 
 app.get('/api/notes/:id', (request, response) => {
@@ -59,6 +62,6 @@ app.use((request, response) => {
 
 
 
-const PORT = 3001
+const PORT = 3000
 app.listen(PORT)
 console.log(`Server running on port ${PORT}`)

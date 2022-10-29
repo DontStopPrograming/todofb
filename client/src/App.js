@@ -1,38 +1,32 @@
 /* eslint-disable no-sequences */
 import './App.css';
-import notes from './notes';
-import {useEffect} from 'react'
+import Form from './Form';
+import Mensaje from './Mensaje';
+import Home from './Home';
+import { Link, Routes, Route} from 'react-router-dom'
+
 function App() {
   
-  useEffect(() => {
-    conex()
-  },[])
-  
-  const conex = async() => { 
-    const url = await fetch('http://localhost:3000/api/notes')
-    const dataJson = await url.json()
-    console.log(dataJson)
-    
-  } 
-  
-    
-  
-
   return (
     <>
-      { !notes ? 'cargando...' : 
-        notes.map((note, id) => {
-          return <ul key = {id}>
-              <li>
-                id : {note.id}, 
-                title: {note.title},
-                completed: {note.completed}
-                
-              </li>
+      <div className = 'App'>
+        <header>
+          <h1> TITULO</h1>
+          <nav>
+            <ul>
+              <li> <Link to = '/'> Home</Link></li>
+              <li> <Link to = '/mensaje'> Message</Link></li>
+              <li> <Link to = '/form'> Form</Link> </li>
             </ul>
-        }
-          
-        )}
+          </nav>
+        </header>
+      </div>
+
+     <Routes>
+            <Route path = '/' element = {<Home />}></Route>
+            <Route path = '/mensaje' element = {<Mensaje />}></Route>
+            <Route path = '/form' element = {<Form />}></Route>
+     </Routes>
     </>
   );
 }

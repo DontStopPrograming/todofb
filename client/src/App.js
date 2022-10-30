@@ -1,31 +1,23 @@
 /* eslint-disable no-sequences */
 import './App.css';
 import Form from './Form';
-import Mensaje from './Mensaje';
+import {Blog} from './Blog';
 import Home from './Home';
-import { Link, Routes, Route} from 'react-router-dom'
+import Menu from './Menu'
+import { BlogPost } from './BlogPost';
+import {Link, Routes, Route} from 'react-router-dom'
 
 function App() {
   
   return (
     <>
-      <div className = 'App'>
-        <header>
-          <h1> TITULO</h1>
-          <nav>
-            <ul>
-              <li> <Link to = '/'> Home</Link></li>
-              <li> <Link to = '/mensaje'> Message</Link></li>
-              <li> <Link to = '/form'> Form</Link> </li>
-            </ul>
-          </nav>
-        </header>
-      </div>
-
+     <Menu />
      <Routes>
             <Route path = '/' element = {<Home />}></Route>
-            <Route path = '/mensaje' element = {<Mensaje />}></Route>
+            <Route path = '/blog' element = {<Blog />}></Route>
+            <Route path = 'blog/:slug' element = {<BlogPost />}></Route>
             <Route path = '/form' element = {<Form />}></Route>
+            <Route path = '*' element = {<p> Not found</p>}></Route>
      </Routes>
     </>
   );

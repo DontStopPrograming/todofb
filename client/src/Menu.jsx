@@ -1,4 +1,4 @@
-import { NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 function Menu() {
     
@@ -37,5 +37,13 @@ const routes = []
         to: '/form',
         text: 'Form',
     })
+    routes.push({
+        to: '/login',
+        text: 'Login',
+    })
+    routes.push({
+        to: '/logout',
+        text: 'Logout',
+    })
     
-export default Menu
+export {Menu}

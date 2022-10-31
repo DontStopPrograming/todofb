@@ -1,7 +1,7 @@
 import {Link, Outlet} from 'react-router-dom'
 import {blogdata} from './BlogData'
 
-function Blog() {
+function BlogPage() {
 
     return (
     <>
@@ -27,4 +27,4 @@ function BlogLink ({post}) {
 }
 
 
-export {Blog}
+export {BlogPage}

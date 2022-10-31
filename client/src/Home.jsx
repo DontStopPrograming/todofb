@@ -28,7 +28,9 @@ function Home() {
                     })
                 }
             </ul>
+
+            <h1> HOME</h1>
         </>
     )
 }
-export default Home
+export {Home}

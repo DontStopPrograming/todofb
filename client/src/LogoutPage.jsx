@@ -1,8 +1,11 @@
+import {useAuth} from './Auth'
+
 function LogoutPage() {
-    
+    const auth = useAuth()
+
     const logout = (e) => {
         e.preventDefault()
-        console.log('logout')
+        auth.logout()
     }
 
   return (

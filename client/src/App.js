@@ -18,7 +18,7 @@ function App() {
     
    <AuthProvider>
    <Menu />
-     <Routes>
+    <Routes>
             <Route path = '/' element = {<Home />}></Route>
             <Route path = '/blog' element = {<BlogPage />}></Route>
             <Route path = 'blog/:slug' element = {<BlogPost />}></Route>
@@ -42,7 +42,7 @@ function App() {
               </Route>
 
             <Route path = '*' element = {<p> Not found</p>}></Route>
-
+                
             
      </Routes>
    </AuthProvider>

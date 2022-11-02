@@ -1,14 +1,17 @@
 import {createContext, useContext, useState} from 'react'
-import { useNavigate, Navigate } from 'react-router-dom'
+import { useNavigate, Navigate} from 'react-router-dom'
+
+const adminList = ['dya', 'me', 'f']
 
 const AuthContext = createContext()
 
 function AuthProvider({children}) {
     const navigate = useNavigate()
-    const [user ,setUser] = useState(null)
+    const [user, setUser] = useState(null)
 
     const login = ({username}) => {
-        setUser({username})
+        const isAdmin = adminList.find(admin => admin === username)
+        setUser({username, isAdmin})
         navigate('/profile')
     }
 

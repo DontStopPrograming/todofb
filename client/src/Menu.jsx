@@ -55,7 +55,7 @@ const routes = []
     routes.push({
         to: '/logout',
         text: 'Logout',
-        private: false,
+        private: true,
     })
     routes.push({
         to: '/profile',
